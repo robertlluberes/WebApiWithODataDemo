@@ -1,5 +1,6 @@
 ﻿using API.Core;
 using API.Core.Models;
+using Microsoft.AspNet.OData;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
@@ -21,6 +22,7 @@ namespace API.Controllers
 
         // GET: api/CommunityMembers
         [HttpGet]
+        [EnableQuery()]
         public IEnumerable<CommunityMember> GetCommunityMembers()
         {
             return _context.CommunityMembers;
