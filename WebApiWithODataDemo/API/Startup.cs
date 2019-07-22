@@ -41,6 +41,7 @@ namespace API
             app.UseMvc(routeBuilder =>
             {
                 routeBuilder.EnableDependencyInjection();
+                routeBuilder.Expand().Filter().OrderBy().MaxTop(100).Select();
             });
         }
     }
