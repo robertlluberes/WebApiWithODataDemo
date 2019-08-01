@@ -17,9 +17,9 @@ Set the name of the project and solution name and its path.
 Select the _API_ template and the characteristics of the project
 ![Create Project - Step 4](images/CreateProjectStep4.png)
 
-**Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/b39953918d44905ed0e436c8420d4379560aa151)**.
+**Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/b39953918d44905ed0e436c8420d4379560aa151)**.
 
-**Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/b39953918d44905ed0e436c8420d4379560aa151)**.
+**You can see the specific changes in this [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/b39953918d44905ed0e436c8420d4379560aa151)**.
 
 ## Adding the models
 
@@ -106,9 +106,9 @@ using System.Collections.Generic;
 } 
 ```
 
-**Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/07323bcea9ffee49e87f54b872a8fb850e2d79de)**.
+**Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/07323bcea9ffee49e87f54b872a8fb850e2d79de)**.
 
-**Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/07323bcea9ffee49e87f54b872a8fb850e2d79de)**.
+**You can see the specific changes in this [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/07323bcea9ffee49e87f54b872a8fb850e2d79de)**.
 
 ## Adding the DbContext
 
@@ -153,9 +153,9 @@ using Microsoft.EntityFrameworkCore;
 } 
 ```
 
-**Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/bebfd89ceb8d51a509ef4d8de2e3f615c0561bf5)**.
+**Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/bebfd89ceb8d51a509ef4d8de2e3f615c0561bf5)**.
 
-**Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/bebfd89ceb8d51a509ef4d8de2e3f615c0561bf5)**.
+**You can see the specific changes in this [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/bebfd89ceb8d51a509ef4d8de2e3f615c0561bf5)**.
 
 ## Adding the connection string
 
@@ -175,9 +175,9 @@ In the `API` project it is necessary to add a JSON object in the `appsettings.js
 }
 ```
 
-**Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/eb74a5fec0780fd3e73342449c641f0c709af79a)**.
+**Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/eb74a5fec0780fd3e73342449c641f0c709af79a)**.
 
-**Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/eb74a5fec0780fd3e73342449c641f0c709af79a)**.
+**You can see the specific changes in this [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/eb74a5fec0780fd3e73342449c641f0c709af79a)**.
 
 ## Registering the DbContext
 
@@ -227,9 +227,9 @@ namespace API
 }
 ```
 
-**Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/dc3e622fae2569859b75e8ba4f94e3e2319afd0e)**.
+**Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/dc3e622fae2569859b75e8ba4f94e3e2319afd0e)**.
 
-**Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/dc3e622fae2569859b75e8ba4f94e3e2319afd0e)**.
+**You can see the specific changes in this [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/dc3e622fae2569859b75e8ba4f94e3e2319afd0e)**.
 
 ## Adding the data
 
@@ -380,17 +380,17 @@ We will add initial data to the models for this demonstration, in the class `App
 #endregion Data Seed
 ```
 
-**Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/b9b6ce63320b4904c72b23e1b985208b22fdb904)**.
+**Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/b9b6ce63320b4904c72b23e1b985208b22fdb904)**.
 
-**Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/b9b6ce63320b4904c72b23e1b985208b22fdb904)**.
+**You can see the specific changes in this [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/b9b6ce63320b4904c72b23e1b985208b22fdb904)**.
 
 ## Adding Migration
 
 After executing the `add-migration InitialModel` command in the _Package Manager Console_ a folder called _Migration_ will be created.
 
-**Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/d889e01336a6660d4099c5f7152d3315bb35aaa3)**.
+**Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/d889e01336a6660d4099c5f7152d3315bb35aaa3)**.
 
-**Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/d889e01336a6660d4099c5f7152d3315bb35aaa3)**.
+**You can see the specific changes in this [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/d889e01336a6660d4099c5f7152d3315bb35aaa3)**.
 
 ## Adding the Controllers
 
