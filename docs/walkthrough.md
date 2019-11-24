@@ -1,4 +1,4 @@
-# Inyectando esteroides a tu Web API en .NET Core con OData
+# Injecting steroids to your Web API in .NET Core with OData
 
 Demo of how to add basic query functionalities to your Web API with OData in .NET Core
 
@@ -25,7 +25,6 @@ Select the _API_ template and the characteristics of the project
 
 Create a folder called _Core_ and within this, a call _Models_, here we will create the following data models.
 
-
 **CommunityMembers**:
 
 ```Csharp
@@ -41,7 +40,7 @@ namespace API.Core.Models
 
          public Member Member { get; set; }
     }
-} 
+}
 ```
 
 **Community**:
@@ -61,7 +60,7 @@ using System.Collections.Generic;
 
          public ICollection<CommunityMember> CommunityMembers { get; set; }
     }
-} 
+}
 ```
 
 **Technology**:
@@ -79,7 +78,7 @@ using System.Collections.Generic;
 
          public ICollection<Member> Members { get; set; }
     }
-} 
+}
 ```
 
 **Member**:
@@ -103,7 +102,7 @@ using System.Collections.Generic;
 
          public ICollection<CommunityMember> CommunityMembers { get; set; }
     }
-} 
+}
 ```
 
 **Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/07323bcea9ffee49e87f54b872a8fb850e2d79de)**.
@@ -112,7 +111,7 @@ using System.Collections.Generic;
 
 ## Adding the DbContext
 
-Within the _Core_ folder, add a class called `ApplicationDbContext`, it sets up a many-to-many relationship between the` Community` and `Member` models
+Within the _Core_ folder, add a class called `ApplicationDbContext`, it sets up a many-to-many relationship between the`Community` and `Member` models
 
 ```Csharp
 using API.Core.Models;
@@ -150,7 +149,7 @@ using Microsoft.EntityFrameworkCore;
                 .HasForeignKey(cm => cm.MemberId);
         }
     }
-} 
+}
 ```
 
 **Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/bebfd89ceb8d51a509ef4d8de2e3f615c0561bf5)**.
@@ -181,7 +180,7 @@ In the `API` project it is necessary to add a JSON object in the `appsettings.js
 
 ## Registering the DbContext
 
-In the `ConfigureServices` method of the` Startup` class we add the `ApplicationDbContext`, configuring the type of database to be used and indicating the connection string.
+In the `ConfigureServices` method of the`Startup` class we add the `ApplicationDbContext`, configuring the type of database to be used and indicating the connection string.
 
 ```Csharp
 using API.Core;
@@ -233,7 +232,7 @@ namespace API
 
 ## Adding the data
 
-We will add initial data to the models for this demonstration, in the class `ApplicationDbContext` in the` OnModelCreating` method.
+We will add initial data to the models for this demonstration, in the class `ApplicationDbContext` in the`OnModelCreating` method.
 
 ```CSharp
 #region Data Seed
@@ -838,10 +837,9 @@ namespace API.Controllers
 }
 ```
 
-**Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/e98f72861a40c4f7db50dc8bd90b8d60743c49a1)**.
+**Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/e98f72861a40c4f7db50dc8bd90b8d60743c49a1)**.
 
-**Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/e98f72861a40c4f7db50dc8bd90b8d60743c49a1)**.
-
+**You can see the specific changes in this [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/e98f72861a40c4f7db50dc8bd90b8d60743c49a1)**.
 
 ## Adding the OData package
 
@@ -849,14 +847,13 @@ In order to use `OData` in our project it is necessary to install the package fr
 
 `install-package Microsoft.AspNetCore.Odata`
 
-**Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/4c7363fc21eadcbab90a97a87308b2a575d7e47d)**.
+**Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/4c7363fc21eadcbab90a97a87308b2a575d7e47d)**.
 
-**Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/4c7363fc21eadcbab90a97a87308b2a575d7e47d)**.
-
+**You can see the specific changes in this [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/4c7363fc21eadcbab90a97a87308b2a575d7e47d)**.
 
 ## Adding the OData service
 
-It is necessary to tell our API that you use OData services, from the `Startup` class in the` ConfigureServices` method
+It is necessary to tell our API that you use OData services, from the `Startup` class in the`ConfigureServices` method
 
 ```Csharp
 using API.Core;
@@ -905,13 +902,13 @@ namespace API
 }
 ```
 
-**Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/41ee27c8a9a4b6b3e90996967197fe6f5b78a675)**.
+**Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/41ee27c8a9a4b6b3e90996967197fe6f5b78a675)**.
 
-**Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/41ee27c8a9a4b6b3e90996967197fe6f5b78a675)**.
+**You can see the specific changes in this [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/41ee27c8a9a4b6b3e90996967197fe6f5b78a675)**.
 
 ## Enabling dependency injection for HTTP paths
 
-In order to use the [OData query options](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#_Toc14103641) (_Query string_), it is necessary to enable dependency injection in HTTP queries, in the `Configure` method of the` Startup` class.
+In order to use the [OData query options](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#_Toc14103641) (_Query string_), it is necessary to enable dependency injection in HTTP queries, in the `Configure` method of the`Startup` class.
 
 ```Csharp
 using API.Core;
@@ -963,21 +960,21 @@ namespace API
 }
 ```
 
-**Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/3880a20e395765608755f310ceacd12b898e6efa)**.
+**Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/3880a20e395765608755f310ceacd12b898e6efa)**.
 
-**Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/3880a20e395765608755f310ceacd12b898e6efa)**.
-
+**You can see the specific changes in this [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/3880a20e395765608755f310ceacd12b898e6efa)**.
 
 ## Adding the OData functionalities
 
 Now it is necessary to configure the functionalities that will be available when using OData.
 
 In this case we are enabling:
-* [Expand](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#_Toc14103725)
-* [Filter](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#_Toc14103724)
-* [OrderBy](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#_Toc14103727)
-* [MaxTop (Top)](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#sec_SystemQueryOptionstopandskip)
-* [Select](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#sec_SystemQueryOptionselect)
+
+- [Expand](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#_Toc14103725)
+- [Filter](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#_Toc14103724)
+- [OrderBy](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#_Toc14103727)
+- [MaxTop (Top)](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#sec_SystemQueryOptionstopandskip)
+- [Select](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#sec_SystemQueryOptionselect)
 
 ```Csharp
 using API.Core;
@@ -1030,22 +1027,21 @@ namespace API
 }
 ```
 
-**Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/3f8e494787a2bed7b1f85af5e7fd97eb7802613b)**.
+**Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/3f8e494787a2bed7b1f85af5e7fd97eb7802613b)**.
 
-**Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/3f8e494787a2bed7b1f85af5e7fd97eb7802613b)**.
+**You can see the specific changes in this [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/3f8e494787a2bed7b1f85af5e7fd97eb7802613b)**.
 
 ## Enabling OData queries on Controllers
 
-Finally, to be able to make queries with OData about a controller, it is necessary to place it in decorator [`[EnableQuery ()]`](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn726413(v%3Dvs.118)).
+Finally, to be able to make queries with OData about a controller, it is necessary to place it in decorator [`[EnableQuery ()]`](<https://docs.microsoft.com/en-us/previous-versions/aspnet/dn726413(v%3Dvs.118)>).
 
+**Browse the repository at this point in the story, [here](https://github.com/robertlluberes/WebApiWithODataDemo/tree/8768d74a84fb9fcde32837b6f492681c7ee9591d)**.
 
-**Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/8768d74a84fb9fcde32837b6f492681c7ee9591d)**.
-
-**Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/8768d74a84fb9fcde32837b6f492681c7ee9591d)**.
+**You can see the specific changes in this [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/8768d74a84fb9fcde32837b6f492681c7ee9591d)**.
 
 ## References:
 
-* [Documentación OData](https://www.odata.org/documentation/)
-    * [URL Conventions](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html)
-* [EnableQueryAttribute Class](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn726413(v%3Dvs.118))
-* [NuGet Package Microsoft.AspNetCore.OData](https://www.nuget.org/packages/Microsoft.AspNetCore.OData)
+- [OData Documentation](https://www.odata.org/documentation/)
+  - [URL Conventions](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html)
+- [EnableQueryAttribute Class](<https://docs.microsoft.com/en-us/previous-versions/aspnet/dn726413(v%3Dvs.118)>)
+- [NuGet Package Microsoft.AspNetCore.OData](https://www.nuget.org/packages/Microsoft.AspNetCore.OData)
