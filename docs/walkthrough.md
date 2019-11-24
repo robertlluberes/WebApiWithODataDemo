@@ -1045,3 +1045,4 @@ Finally, to be able to make queries with OData about a controller, it is necessa
   - [URL Conventions](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html)
 - [EnableQueryAttribute Class](<https://docs.microsoft.com/en-us/previous-versions/aspnet/dn726413(v%3Dvs.118)>)
 - [NuGet Package Microsoft.AspNetCore.OData](https://www.nuget.org/packages/Microsoft.AspNetCore.OData)
+- [Security Guidance for ASP.NET Web API 2 OData](https://docs.microsoft.com/en-us/aspnet/web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance)

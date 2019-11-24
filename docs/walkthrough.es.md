@@ -25,7 +25,6 @@ Selecciona la plantilla _API_ e indicar las características del proyecto
 
 Crea una carpeta llamada _Core_ y dentro de esta, una llamada _Models_, aquí crearemos los siguientes modelos de datos.
 
-
 **CommunityMembers**:
 
 ```Csharp
@@ -41,7 +40,7 @@ namespace API.Core.Models
 
          public Member Member { get; set; }
     }
-} 
+}
 ```
 
 **Community**:
@@ -61,7 +60,7 @@ using System.Collections.Generic;
 
          public ICollection<CommunityMember> CommunityMembers { get; set; }
     }
-} 
+}
 ```
 
 **Technology**:
@@ -79,7 +78,7 @@ using System.Collections.Generic;
 
          public ICollection<Member> Members { get; set; }
     }
-} 
+}
 ```
 
 **Member**:
@@ -103,7 +102,7 @@ using System.Collections.Generic;
 
          public ICollection<CommunityMember> CommunityMembers { get; set; }
     }
-} 
+}
 ```
 
 **Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/07323bcea9ffee49e87f54b872a8fb850e2d79de)**.
@@ -150,7 +149,7 @@ using Microsoft.EntityFrameworkCore;
                 .HasForeignKey(cm => cm.MemberId);
         }
     }
-} 
+}
 ```
 
 **Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/bebfd89ceb8d51a509ef4d8de2e3f615c0561bf5)**.
@@ -409,11 +408,10 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-    public class CommunitiesController : ControllerBase
-    {
-        private readonly ApplicationDbContext _context;
+[Route("api/[controller]")][apicontroller]
+public class CommunitiesController : ControllerBase
+{
+private readonly ApplicationDbContext \_context;
 
         public CommunitiesController(ApplicationDbContext context)
         {
@@ -503,8 +501,10 @@ namespace API.Controllers
             return _context.Communities.Any(e => e.CommunityId == id);
         }
     }
+
 }
-```
+
+````
 
 **CommunityMembersController**:
 
@@ -629,7 +629,7 @@ namespace API.Controllers
         }
     }
 }
-```
+````
 
 **MembersController**:
 
@@ -857,7 +857,6 @@ namespace API.Controllers
 
 **Puedes ver los cambios específicos en este [commit]https://github.com/robertlluberes/WebApiWithODataDemo/commit/e98f72861a40c4f7db50dc8bd90b8d60743c49a1)**.
 
-
 ## Agregando el paquete de OData
 
 Para poder utilizar `OData` en nuestro proyecto es necesario instalar su paquete desde el _Package Manager Consoler_ con el siguiente comando:
@@ -867,7 +866,6 @@ Para poder utilizar `OData` en nuestro proyecto es necesario instalar su paquete
 **Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/4c7363fc21eadcbab90a97a87308b2a575d7e47d)**.
 
 **Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/4c7363fc21eadcbab90a97a87308b2a575d7e47d)**.
-
 
 ## Agregando el servicio de OData
 
@@ -982,17 +980,17 @@ namespace API
 
 **Puedes ver los cambios específicos en este [commit](https://github.com/robertlluberes/WebApiWithODataDemo/commit/3880a20e395765608755f310ceacd12b898e6efa)**.
 
-
 ## Agregando las funcionalidades de OData
 
 Ahora es necesario configurar las funcionalidades que estarán disponible al momento de utilizar OData.
 
 En este caso estamos habilitando:
-* [Expand](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#_Toc14103725)
-* [Filter](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#_Toc14103724)
-* [OrderBy](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#_Toc14103727)
-* [MaxTop (Top)](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#sec_SystemQueryOptionstopandskip)
-* [Select](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#sec_SystemQueryOptionselect)
+
+- [Expand](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#_Toc14103725)
+- [Filter](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#_Toc14103724)
+- [OrderBy](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#_Toc14103727)
+- [MaxTop (Top)](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#sec_SystemQueryOptionstopandskip)
+- [Select](http://docs.oasis-open.org/odata/odata/v4.01/csprd05/part2-url-conventions/odata-v4.01-csprd05-part2-url-conventions.html#sec_SystemQueryOptionselect)
 
 ```Csharp
 using API.Core;
@@ -1051,8 +1049,7 @@ namespace API
 
 ## Habilitando las consultas con OData en los controladores
 
-Por ultimo, para poder realizar las consultas con OData sobre un controlador, es necesario colocarle en decorador [`[EnableQuery()]`](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn726413(v%3Dvs.118)).
-
+Por ultimo, para poder realizar las consultas con OData sobre un controlador, es necesario colocarle en decorador [`[EnableQuery()]`](<https://docs.microsoft.com/en-us/previous-versions/aspnet/dn726413(v%3Dvs.118)>).
 
 **Navega por el repositorio en este punto de la historia, [aquí](https://github.com/robertlluberes/WebApiWithODataDemo/tree/8768d74a84fb9fcde32837b6f492681c7ee9591d)**.
 
@@ -1060,7 +1057,8 @@ Por ultimo, para poder realizar las consultas con OData sobre un controlador, es
 
 ## Referencias:
 
-* [Documentación OData](https://www.odata.org/documentation/)
-    * [URL Conventions](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html)
-* [EnableQueryAttribute Class](https://docs.microsoft.com/en-us/previous-versions/aspnet/dn726413(v%3Dvs.118))
-* [NuGet Package Microsoft.AspNetCore.OData](https://www.nuget.org/packages/Microsoft.AspNetCore.OData)
+- [Documentación OData](https://www.odata.org/documentation/)
+  - [URL Conventions](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part2-url-conventions.html)
+- [EnableQueryAttribute Class](<https://docs.microsoft.com/en-us/previous-versions/aspnet/dn726413(v%3Dvs.118)>)
+- [NuGet Package Microsoft.AspNetCore.OData](https://www.nuget.org/packages/Microsoft.AspNetCore.OData)
+- [Security Guidance for ASP.NET Web API 2 OData](https://docs.microsoft.com/en-us/aspnet/web-api/overview/odata-support-in-aspnet-web-api/odata-security-guidance)
